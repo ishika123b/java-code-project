@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+class GradeSystem {
+
+    double percentage;
+
+    // Constructor
+    GradeSystem(double p) {
+        percentage = p;
+    }
+
+    // Member function
+    void calculateGrade() {
+
+        if (percentage >= 90) {
+            System.out.println("Grade A");
+        }
+        else if (percentage >= 80) {
+            System.out.println("Grade B");
+        }
+        else if (percentage >= 70) {
+            System.out.println("Grade C");
+        }
+        else if (percentage >= 60) {
+            System.out.println("Grade D");
+        }
+        else if (percentage >= 40) {
+            System.out.println("Grade E");
+        }
+        else {
+            System.out.println("Grade F");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your percentage: ");
+        double per = sc.nextDouble();
+
+        // Creating object
+        GradeSystem obj = new GradeSystem(per);
+
+        // Calling member function
+        obj.calculateGrade();
+    }
+}
