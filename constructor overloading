@@ -1,0 +1,29 @@
+class Person {
+    String name;
+    int age;
+
+    // Constructor 1
+    Person() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    // Constructor 2
+    Person(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        Person p1 = new Person();              // default constructor
+        Person p2 = new Person("Ishika", 20);  // parameterized constructor
+
+        p1.display();
+        p2.display();
+    }
+}
