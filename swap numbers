@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+class SwapNumbers {
+
+    int a, b;
+
+    // Constructor
+    SwapNumbers(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+    // Member function to swap
+    void swap() {
+        int temp;
+        temp = a;
+        a = b;
+        b = temp;
+    }
+
+    // Member function to display
+    void display() {
+        System.out.println("Value of a: " + a);
+        System.out.println("Value of b: " + b);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int n1 = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int n2 = sc.nextInt();
+
+        // Creating first object
+        SwapNumbers obj1 = new SwapNumbers(n1, n2);
+
+        // Creating second object
+        SwapNumbers obj2 = new SwapNumbers(n1, n2);
+
+        System.out.println("Before Swapping:");
+        obj1.display();
+
+        // Calling swap function using second object
+        obj2.swap();
+
+        System.out.println("After Swapping:");
+        obj2.display();
+    }
+}
