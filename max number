@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class MaxNumber {
+
+    int a, b, c;
+
+    // Constructor
+    MaxNumber(int x, int y, int z) {
+        a = x;
+        b = y;
+        c = z;
+    }
+
+    // Member function
+    void findMax() {
+        if (a >= b && a >= c) {
+            System.out.println("Maximum number is: " + a);
+        } 
+        else if (b >= a && b >= c) {
+            System.out.println("Maximum number is: " + b);
+        } 
+        else {
+            System.out.println("Maximum number is: " + c);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int n1 = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int n2 = sc.nextInt();
+
+        System.out.print("Enter third number: ");
+        int n3 = sc.nextInt();
+
+        // Creating object
+        MaxNumber obj = new MaxNumber(n1, n2, n3);
+
+        // Calling member function
+        obj.findMax();
+    }
+}
