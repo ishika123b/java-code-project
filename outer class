@@ -1,0 +1,21 @@
+class OuterClass {
+
+    int x = 10;
+
+    // Inner class
+    class InnerClass {
+        void display() {
+            System.out.println("Value of x from Outer Class: " + x);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        OuterClass outer = new OuterClass();
+
+        // Creating object of inner class
+        OuterClass.InnerClass inner = outer.new InnerClass();
+
+        inner.display();
+    }
+}
