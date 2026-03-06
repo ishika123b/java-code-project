@@ -1,0 +1,27 @@
+// Parent class
+class Person {
+    String getRole() {
+        return "I am a person";
+    }
+}
+
+// Child class
+class Student extends Person {
+    // Overriding the method
+    String getRole() {
+        return "I am a student";
+    }
+}
+
+// Main class
+public class MethodOverridingDemo {
+    public static void main(String[] args) {
+        Person p;
+        
+        p = new Person();
+        System.out.println(p.getRole());
+
+        p = new Student();
+        System.out.println(p.getRole());
+    }
+}
