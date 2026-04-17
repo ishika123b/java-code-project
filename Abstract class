@@ -1,0 +1,55 @@
+abstract class MotorVehicle
+{
+    String modelName;
+    int modelNumber;
+    double modelPrice;
+
+    // Constructor
+    MotorVehicle(String name, int number, double price)
+    {
+        modelName = name;
+        modelNumber = number;
+        modelPrice = price;
+    }
+
+    // Abstract method
+    abstract void display();
+}
+
+class Car extends MotorVehicle
+{
+    double discountRate;
+
+    // Constructor
+    Car(String name, int number, double price, double rate)
+    {
+        super(name, number, price);
+        discountRate = rate;
+    }
+
+    // Method to calculate discount
+    double discount()
+    {
+        return (modelPrice * discountRate) / 100;
+    }
+
+    // Override display method
+    void display()
+    {
+        System.out.println("Car Name : " + modelName);
+        System.out.println("Model Number : " + modelNumber);
+        System.out.println("Price : " + modelPrice);
+        System.out.println("Discount Rate : " + discountRate + "%");
+        System.out.println("Discount Amount : " + discount());
+        System.out.println("Final Price : " + (modelPrice - discount()));
+    }
+}
+
+public class Main
+{
+    public static void main(String args[])
+    {
+        Car c = new Car("Toyota", 2024, 1500000, 10);
+        c.display();
+    }
+}
