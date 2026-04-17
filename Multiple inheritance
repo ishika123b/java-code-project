@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+// Interface Bank
+interface Bank
+{
+    String bankName = "State Bank";
+
+    void showBank();
+}
+
+// Customer class
+class Customer
+{
+    String customerName;
+    int customerId;
+
+    void getCustomer()
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Customer Name: ");
+        customerName = sc.nextLine();
+
+        System.out.print("Enter Customer ID: ");
+        customerId = sc.nextInt();
+    }
+
+    void showCustomer()
+    {
+        System.out.println("Customer Name : " + customerName);
+        System.out.println("Customer ID   : " + customerId);
+    }
+}
+
+// Account class inherits Customer and implements Bank
+class Account extends Customer implements Bank
+{
+    int accNo;
+    double balance;
+
+    void getAccount()
+    {
+        Scanner sc = new Scanner(System.in);
+
+        getCustomer();
+
+        System.out.print("Enter Account Number: ");
+        accNo = sc.nextInt();
+
+        System.out.print("Enter Balance: ");
+        balance = sc.nextDouble();
+    }
+
+    void showAccount()
+    {
+        showBank();
+        showCustomer();
+
+        System.out.println("Account Number: " + accNo);
+        System.out.println("Balance       : " + balance);
+    }
+
+    public void showBank()
+    {
+        System.out.println("Bank Name     : " + bankName);
+    }
+}
+
+// Main class
+public class Main
+{
+    public static void main(String args[])
+    {
+        Account a = new Account();
+
+        a.getAccount();
+
+        System.out.println("\n--- Account Details ---");
+        a.showAccount();
+    }
+}
